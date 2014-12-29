@@ -77,13 +77,15 @@ window.plugin.yetToFull.addLabel = function(guid) {
   var latLng = p.getLatLng();
   var d = window.portalDetail.get(guid);
   if (!d) return;
-  if (d.level != 7) return;
   var yet = -8;
   for (var i in d.resonators) {
       if (d.resonators[i] && d.resonators[i].level == 8) {
           yet++;
       }
   }
+  if (!((d.level == 7) ||
+        (d.level <= 6 && yet >= -5)))
+    return;
   var level = L.marker(latLng, {
     icon: L.divIcon({
       className: 'plugin-yet-to-full',
