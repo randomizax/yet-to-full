@@ -2,11 +2,11 @@
 // @id             iitc-plugin-yet-to-full@randomizax
 // @name           IITC plugin: Show L8 Resonators Needed
 // @category       Layer
-// @version        0.1.5.20141205.020546
+// @version        0.1.6.20141229.183440
 // @namespace      https://github.com/jonatkins/ingress-intel-total-conversion
 // @updateURL      https://rawgit.com/randomizax/yet-to-full/latest/yet-to-full.meta.js
 // @downloadURL    https://rawgit.com/randomizax/yet-to-full/latest/yet-to-full.user.js
-// @description    [randomizax-2014-12-05-020546] Show L8 Resonators Needed
+// @description    [randomizax-2014-12-29-183440] Show L8 Resonators Needed
 // @include        https://www.ingress.com/intel*
 // @include        http://www.ingress.com/intel*
 // @match          https://www.ingress.com/intel*
@@ -71,17 +71,17 @@ window.plugin.yetToFull.addLabel = function(guid) {
   // remove old layer before updating
   window.plugin.yetToFull.removeLabel(guid);
 
-  // add number of non-8 resonators
+  // count missing L8 resonators
   var p = window.portals[guid];
   if (!p) return;
   var latLng = p.getLatLng();
   var d = window.portalDetail.get(guid);
   if (!d) return;
   if (d.level != 7) return;
-  var yet = 0;
+  var yet = -8;
   for (var i in d.resonators) {
-      if (!(d.resonators[i] && d.resonators[i].level == 8)) {
-          yet--;
+      if (d.resonators[i] && d.resonators[i].level == 8) {
+          yet++;
       }
   }
   var level = L.marker(latLng, {
