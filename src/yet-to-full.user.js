@@ -2,11 +2,11 @@
 // @id             iitc-plugin-yet-to-full@randomizax
 // @name           IITC plugin: Show L8 Resonators Needed
 // @category       Layer
-// @version        0.1.7.20150131.153147
+// @version        0.1.7.@@DATETIMEVERSION@@
 // @namespace      https://github.com/jonatkins/ingress-intel-total-conversion
-// @updateURL      https://rawgit.com/randomizax/yet-to-full/latest/yet-to-full.meta.js
-// @downloadURL    https://rawgit.com/randomizax/yet-to-full/latest/yet-to-full.user.js
-// @description    [randomizax-2015-01-31-153147] Show L8 Resonators Needed.
+// @updateURL      @@UPDATEURL@@
+// @downloadURL    @@DOWNLOADURL@@
+// @description    [@@BUILDNAME@@-@@BUILDDATE@@] Show L8 Resonators Needed.
 // @include        https://www.ingress.com/intel*
 // @include        http://www.ingress.com/intel*
 // @match          https://www.ingress.com/intel*
@@ -14,19 +14,7 @@
 // @grant          none
 // ==/UserScript==
 
-
-function wrapper(plugin_info) {
-// ensure plugin framework is there, even if iitc is not yet loaded
-if(typeof window.plugin !== 'function') window.plugin = function() {};
-
-//PLUGIN AUTHORS: writing a plugin outside of the IITC build environment? if so, delete these lines!!
-//(leaving them in place might break the 'About IITC' page or break update checks)
-// plugin_info.buildName = 'randomizax';
-// plugin_info.dateTimeVersion = '20150131.153147';
-// plugin_info.pluginId = 'yet-to-full';
-//END PLUGIN AUTHORS NOTE
-
-
+@@PLUGINSTART@@
 
 // PLUGIN START ////////////////////////////////////////////////////////
 
@@ -152,18 +140,4 @@ var setup = function() {
 
 // PLUGIN END //////////////////////////////////////////////////////////
 
-
-setup.info = plugin_info; //add the script info data to the function as a property
-if(!window.bootPlugins) window.bootPlugins = [];
-window.bootPlugins.push(setup);
-// if IITC has already booted, immediately run the 'setup' function
-if(window.iitcLoaded && typeof setup === 'function') setup();
-} // wrapper end
-// inject code into site context
-var script = document.createElement('script');
-var info = {};
-if (typeof GM_info !== 'undefined' && GM_info && GM_info.script) info.script = { version: GM_info.script.version, name: GM_info.script.name, description: GM_info.script.description };
-script.appendChild(document.createTextNode('('+ wrapper +')('+JSON.stringify(info)+');'));
-(document.body || document.head || document.documentElement).appendChild(script);
-
-
+@@PLUGINEND@@
