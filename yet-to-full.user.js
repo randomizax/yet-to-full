@@ -2,19 +2,15 @@
 // @id             iitc-plugin-yet-to-full@randomizax
 // @name           IITC plugin: Show L8 Resonators Needed
 // @category       Layer
-// @version        1.0.0.20181124.13718
+// @version        1.0.1.20190314.160026
 // @namespace      https://github.com/jonatkins/ingress-intel-total-conversion
-// @updateURL      https://rawgit.com/randomizax/yet-to-full/latest/yet-to-full.meta.js
-// @downloadURL    https://rawgit.com/randomizax/yet-to-full/latest/yet-to-full.user.js
-// @description    [randomizax-2018-11-24-013718] Show L8 Resonators Needed.
-// @include        https://www.ingress.com/intel*
-// @include        http://www.ingress.com/intel*
-// @include        https://intel.ingress.com/intel*
-// @include        http://intel.ingress.com/intel*
-// @match          https://www.ingress.com/intel*
-// @match          http://www.ingress.com/intel*
-// @match          https://intel.ingress.com/intel*
-// @match          http://intel.ingress.com/intel*
+// @updateURL      https://randomizax.github.io/yet-to-full/yet-to-full.meta.js
+// @downloadURL    https://randomizax.github.io/yet-to-full/yet-to-full.user.js
+// @description    [randomizax-2019-03-14-160026] Show L8 Resonators Needed.
+// @include        https://*.ingress.com/intel*
+// @include        http://*.ingress.com/intel*
+// @match          https://*.ingress.com/intel*
+// @match          http://*.ingress.com/intel*
 // @grant          none
 // ==/UserScript==
 
@@ -26,7 +22,7 @@ if(typeof window.plugin !== 'function') window.plugin = function() {};
 //PLUGIN AUTHORS: writing a plugin outside of the IITC build environment? if so, delete these lines!!
 //(leaving them in place might break the 'About IITC' page or break update checks)
 // plugin_info.buildName = 'randomizax';
-// plugin_info.dateTimeVersion = '20181124.13718';
+// plugin_info.dateTimeVersion = '20190314.160026';
 // plugin_info.pluginId = 'yet-to-full';
 //END PLUGIN AUTHORS NOTE
 
