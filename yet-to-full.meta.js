@@ -2,14 +2,12 @@
 // @id             iitc-plugin-yet-to-full@randomizax
 // @name           IITC plugin: Show L8 Resonators Needed
 // @category       Layer
-// @version        1.0.1.20190314.160026
-// @namespace      https://github.com/jonatkins/ingress-intel-total-conversion
+// @version        2.0.0.20250420.45823
+// @namespace      https://github.com/IITC-CE/ingress-intel-total-conversion
 // @updateURL      https://randomizax.github.io/yet-to-full/yet-to-full.meta.js
 // @downloadURL    https://randomizax.github.io/yet-to-full/yet-to-full.user.js
-// @description    [randomizax-2019-03-14-160026] Show L8 Resonators Needed.
-// @include        https://*.ingress.com/intel*
-// @include        http://*.ingress.com/intel*
-// @match          https://*.ingress.com/intel*
-// @match          http://*.ingress.com/intel*
+// @description    [randomizax-2025-04-20-045823] Show L8 Resonators Needed.
+// @include        https://intel.ingress.com/*
+// @match          https://intel.ingress.com/*
 // @grant          none
 // ==/UserScript==

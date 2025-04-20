@@ -2,15 +2,13 @@
 // @id             iitc-plugin-yet-to-full@randomizax
 // @name           IITC plugin: Show L8 Resonators Needed
 // @category       Layer
-// @version        1.0.1.20190314.160026
-// @namespace      https://github.com/jonatkins/ingress-intel-total-conversion
+// @version        2.0.0.20250420.45823
+// @namespace      https://github.com/IITC-CE/ingress-intel-total-conversion
 // @updateURL      https://randomizax.github.io/yet-to-full/yet-to-full.meta.js
 // @downloadURL    https://randomizax.github.io/yet-to-full/yet-to-full.user.js
-// @description    [randomizax-2019-03-14-160026] Show L8 Resonators Needed.
-// @include        https://*.ingress.com/intel*
-// @include        http://*.ingress.com/intel*
-// @match          https://*.ingress.com/intel*
-// @match          http://*.ingress.com/intel*
+// @description    [randomizax-2025-04-20-045823] Show L8 Resonators Needed.
+// @include        https://intel.ingress.com/*
+// @match          https://intel.ingress.com/*
 // @grant          none
 // ==/UserScript==
 
@@ -22,7 +20,7 @@ if(typeof window.plugin !== 'function') window.plugin = function() {};
 //PLUGIN AUTHORS: writing a plugin outside of the IITC build environment? if so, delete these lines!!
 //(leaving them in place might break the 'About IITC' page or break update checks)
 // plugin_info.buildName = 'randomizax';
-// plugin_info.dateTimeVersion = '20190314.160026';
+// plugin_info.dateTimeVersion = '20250420.45823';
 // plugin_info.pluginId = 'yet-to-full';
 //END PLUGIN AUTHORS NOTE
 
@@ -92,7 +90,8 @@ window.plugin.yetToFull.addLabel = function(guid) {
       iconSize: [window.plugin.yetToFull.ICON_SIZE * 2, window.plugin.yetToFull.ICON_SIZE],
       html: yet
       }),
-    guid: guid
+    guid: guid,
+    interactive: false
   });
   plugin.yetToFull.levelLayers[guid] = level;
   level.addTo(plugin.yetToFull.levelLayerGroup);
@@ -118,7 +117,7 @@ window.plugin.yetToFull.updatePortalLabels = function() {
   }
 
   // and add those we do
-  for (var guid in portalPoints) {
+  for (guid in portalPoints) {
     window.plugin.yetToFull.addLabel(guid);
   }
 }

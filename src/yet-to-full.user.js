@@ -2,15 +2,13 @@
 // @id             iitc-plugin-yet-to-full@randomizax
 // @name           IITC plugin: Show L8 Resonators Needed
 // @category       Layer
-// @version        1.0.1.@@DATETIMEVERSION@@
-// @namespace      https://github.com/jonatkins/ingress-intel-total-conversion
+// @version        2.0.0.@@DATETIMEVERSION@@
+// @namespace      https://github.com/IITC-CE/ingress-intel-total-conversion
 // @updateURL      @@UPDATEURL@@
 // @downloadURL    @@DOWNLOADURL@@
 // @description    [@@BUILDNAME@@-@@BUILDDATE@@] Show L8 Resonators Needed.
-// @include        https://*.ingress.com/intel*
-// @include        http://*.ingress.com/intel*
-// @match          https://*.ingress.com/intel*
-// @match          http://*.ingress.com/intel*
+// @include        https://intel.ingress.com/*
+// @match          https://intel.ingress.com/*
 // @grant          none
 // ==/UserScript==
 
@@ -80,7 +78,8 @@ window.plugin.yetToFull.addLabel = function(guid) {
       iconSize: [window.plugin.yetToFull.ICON_SIZE * 2, window.plugin.yetToFull.ICON_SIZE],
       html: yet
       }),
-    guid: guid
+    guid: guid,
+    interactive: false
   });
   plugin.yetToFull.levelLayers[guid] = level;
   level.addTo(plugin.yetToFull.levelLayerGroup);
@@ -106,7 +105,7 @@ window.plugin.yetToFull.updatePortalLabels = function() {
   }
 
   // and add those we do
-  for (var guid in portalPoints) {
+  for (guid in portalPoints) {
     window.plugin.yetToFull.addLabel(guid);
   }
 }
